@@ -1,0 +1,290 @@
+/*import fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,300;1,600;1,800&display=swap');
+
+/*colours*/
+/*$primary: blue;
+$primary-dark: navy;
+$dark: rgb(15, 87, 107);
+$dark-light: rgb(28, 28, 63);
+$white: white;*/
+
+/*Customise body*/
+body{
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(15, 87, 107);
+    color: white;
+    box-sizing: border-box;
+}
+
+/*Remove margins*/
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+/*remove any margins*/
+p, h1, h2, h3, h4{
+    margin: 0;
+}
+/*Set font family*/
+button, input, textarea{
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Style the header section*/
+.main-header{
+    max-width: 768px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+}
+.main-header-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/*Link customised and styled, underline and default color removed*/
+.main-header-left a{
+    color: white;
+    font-weight: 700;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+/*Todo header color fades away on mouse hover*/
+.main-header-left a:hover{
+    opacity: 0.7;
+}
+/*Styled the logout button*/
+.btn{
+    display: inline-block;
+    background-color: rgb(0, 128, 107);
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    text-decoration: none;
+}
+/*if button is disabled,; no pointer events*/
+.btn:disabled{
+    pointer-events: none;
+    opacity: 0.5;
+}
+.btn:hover{
+    background-color: aqua;
+}
+/*Register and login section styled and customised*/
+.register{
+    display: flex;
+    margin-top: 0px;
+    align-items: center;
+    justify-content: center;
+}
+.register-prompt{
+    text-align: center;
+    margin-top: 10px;
+}
+.register-prompt p{
+    margin-bottom: -10px;
+}
+/*Link to register or login message customised and styled*/
+.register-prompt a{
+    color: rgb(15, 87, 107);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+.register-prompt a:hover {
+    background-color: cadetblue;
+}
+/*login box styled and customised, text in the box given an rgb(15, 87, 107) color*/
+.register-box{
+    max-width: 500px;
+    width: 100%;
+    padding: 50px;
+    background-color: azure;
+    color: rgb(15, 87, 107);
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+/*Login header*/
+.register-header{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.register-field{
+    margin-bottom: 30px;
+
+}
+/*input filed labes*/
+.register-field label{
+    font-size: 20px;
+    display: block;
+    margin-bottom: 10px;
+}
+/*Input fields customised and styled*/
+.register-field input{
+    background-color: paleturquoise;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    color: rgb(16, 5, 26);
+    font-size: 16px;
+}
+/*Removed outline in input field*/
+.register-field input:focus{
+    outline: none;
+}
+/*Login footer*/
+.register-footer .btn{
+    width: 100%;
+
+}
+.register-footer .error{
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1,25rem
+}
+/*error text*/
+.error {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: red;
+}
+/*Loading message moved to the center of the page*/
+.loading{
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+/*Dashboard*/
+.dashboard{
+    max-width: 768px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 15px;
+}
+.todos-title{
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+/*Added margin between icomplete todos and complete todos*/
+.todos:not(last-child){
+        margin-bottom: 30px;
+}
+.todos h1{
+    font-size: 23px;
+    font-weight: 400;
+}
+/*Todos will display in flex and have been given a background color*/
+.todo{
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    background-color: rgb(181, 249, 226);
+    padding: 10px;
+    border-radius: 5px;
+}
+/*Todo input section styled and customised*/
+.todo input[type="text"] {
+    background-color: transparent;
+    margin-left: 10px;
+    border: none;
+    font-size: 1.125rem;
+    color: rgb(15, 87, 107);
+    flex-grow: 1;
+}
+/*removed focus outline when clicked*/
+.todo input[type="text"]:focus{
+    outline: none;
+}
+/*space between the todos*/
+.todo:not(last-child){
+    margin-bottom: 15px;
+}
+/*Edit and delete buttons styled*/
+.todo-controls{
+    display: flex;
+}
+.todo-controls button{
+    display: block;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    color: rgb(15, 87, 107);
+    font-size: 1rem;
+    transition: all .3s ease;
+    margin-right: 10px;
+    cursor: pointer;
+}
+/*Strike through a todo checked as complete*/
+.todo-complete input[type="text"]{
+    text-decoration: line-through;
+}
+/*on hover background color changes*/
+.todo-controls button:hover{
+    background-color: rgb(39, 129, 129);
+    opacity: 0.7;
+}
+/*Styled and customized checkbox*/
+.todo input[type="checkbox"]{
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    color: antiquewhite;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid rgb(3, 63, 3);
+    border-radius: .18em;
+    display: grid;
+    place-content: center;
+}
+.todo input[type="checkbox"]:hover{
+    cursor: pointer;
+}
+/*Designed and styled the check mark*/
+.todo input[type="checkbox"]::before{
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em rgb(3, 103, 88);
+    background-color: CanvasText;
+}
+.todo input[type="checkbox"]:checked::before{
+    transform: scale(1);
+}
+/*New to do section/form*/
+.new{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: rgb(181, 249, 226);
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+/*customised the new to do input form, gave it a background color*/
+.new input{
+    width: 100%;
+    margin-right: 20px;
+    font-size: 1.125rem;
+    padding: 9px 15px;
+    background-color: rgb(229, 249, 242);
+    border: none;
+    border-radius: 5px;
+    color: rgb(15, 87, 107);
+}
+.new input:focus{
+    outline: none;
+}
+
+/*Sources used include Hyperiondev notes, previous Tasks, You Tube, Geeksforgeeks, W3Schools, Google.com and Stackoverflow*/
